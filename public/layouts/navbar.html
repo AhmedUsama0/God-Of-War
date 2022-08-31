@@ -1,0 +1,470 @@
+<input type="checkbox" id="check" />
+<label for="check">
+  <i class="fa fa-bars" id="bars"></i>
+</label>
+<nav id="nav">
+  <div class="left-box">
+    <div class="links">
+      <a href="#" class="fa fa-gamepad logo"></a>
+      <a href="/public/index.html">GodOfWar</a>
+    </div>
+    <ul style="gap: 30px">
+      <li id="store">
+        <a href="#">Store</a>
+        <i
+          class="fa-solid fa-caret-down"
+          style="transform: translateY(-50%) rotate(0deg)"
+        ></i>
+        <ul class="sub-menu" id="store-list" style="opacity: 0">
+          <li><a href="#">Store Style 1</a></li>
+          <li><a href="#">Product Style 1</a></li>
+          <li><a href="#">Store Style 2</a></li>
+          <li><a href="#">Product Style 1</a></li>
+          <li><a href="#">Cart</a></li>
+          <li><a href="#">Checkout</a></li>
+        </ul>
+      </li>
+      <li id="blog">
+        <a href="#">Blog</a>
+        <i
+          class="fa-solid fa-caret-down"
+          style="transform: translateY(-50%) rotate(0deg)"
+        ></i>
+        <ul class="sub-menu" id="blog-list" style="opacity: 0">
+          <li><a href="#">Blog Style 1</a></li>
+          <li><a href="#">Post Style 1</a></li>
+          <li><a href="#">Blog Style 2</a></li>
+          <li><a href="#">Post Style 2</a></li>
+          <li><a href="#">Blog Style 3</a></li>
+          <li><a href="#">Post Style 3</a></li>
+        </ul>
+      </li>
+      <li id="features">
+        <a href="#">Features</a>
+        <i
+          class="fa-solid fa-caret-down"
+          style="transform: translateY(-50%) rotate(0deg)"
+        ></i>
+        <ul class="sub-menu" id="features-list" style="opacity: 0">
+          <li><a href="#">Forums</a></li>
+          <li><a href="#">Widgets</a></li>
+          <li><a href="#">Forums Topics</a></li>
+          <li><a href="#">Components</a></li>
+          <li><a href="#">Matches List</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Match</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Match with Maps</a></li>
+          <li><a href="#">404</a></li>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Blank</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <ul class="nav-icons">
+    <li id="user">
+      <a href="#">Ahmed</a>
+      <ul style="opacity: 0" id="user-list">
+        <li><a href="#">Activity</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Messages Compose</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Purchase</a></li>
+      </ul>
+    </li>
+    <li>
+      <i class="fa-solid fa-magnifying-glass fa-1x"></i>
+    </li>
+    <li>
+      <i class="fa-solid fa-cart-shopping fa-1x"></i>
+    </li>
+    <li id="user-icon">
+      <i class="fa-solid fa-user fa-1x"></i>
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required autocomplete="off" />
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+        <div>
+          <input type="checkbox" id="remember" />
+          <label style="display: inline-block" for="remember"
+            >Remember Me</label
+          >
+        </div>
+        <input type="submit" value="Log In" />
+        <p><a href="#">Lost password?</a> | <a href="#">Register</a></p>
+      </form>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .left-box .sub-menu li a:hover::after,
+  .navbar,
+  nav,
+  nav .nav-icons ul li a:hover::after {
+    width: 100%;
+  }
+  .left-box .sub-menu::after,
+  .nav-icons li form::after,
+  nav .nav-icons ul::after {
+    top: -25px;
+    height: 0;
+    border-style: solid;
+    border-width: 15px;
+    border-color: transparent transparent #080325;
+  }
+  nav .left-box ul li,
+  nav .nav-icons li {
+    padding: 10px;
+    position: relative;
+  }
+  .left-box .sub-menu,
+  .nav-icons li form,
+  nav .nav-icons ul {
+    background-color: #080325;
+    padding: 30px;
+    width: 350px;
+    top: 80px;
+    transition: 0.4s ease-in-out;
+    display: flex;
+  }
+  nav .nav-icons li {
+    cursor: pointer;
+  }
+  nav .nav-icons ul {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    right: 0;
+  }
+  nav .nav-icons ul li a {
+    color: #fff;
+    position: relative;
+  }
+  nav .nav-icons ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #777;
+    transition: 0.4s ease-in-out;
+  }
+  .nav-icons li form::after,
+  nav .nav-icons ul::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    width: 0;
+  }
+  .left-box ul li::after,
+  nav .nav-icons li::after {
+    bottom: -6px;
+    left: 10px;
+    position: absolute;
+    font-size: 12px;
+    color: gray;
+  }
+  nav .nav-icons > li:first-child:before {
+    content: "5";
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    top: 4px;
+    right: -5px;
+    height: 16px;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #d92b4c;
+    color: #fff;
+  }
+  .navbar #bars,
+  nav .nav-icons i,
+  nav .nav-icons li a {
+    color: #fff;
+  }
+  .nav-icons li form {
+    position: absolute;
+    gap: 25px;
+    flex-wrap: wrap;
+    right: 0;
+    text-transform: capitalize;
+    color: #fff;
+    opacity: 0;
+  }
+  .nav-icons #user-icon:hover > form,
+  .nav-icons li form input[type="checkbox"]:checked::after {
+    opacity: 1;
+  }
+  .nav-icons li form input {
+    flex: 100%;
+  }
+  .nav-icons li form input[type="password"],
+  .nav-icons li form input[type="text"] {
+    height: 30px;
+    border: none;
+    outline: 0;
+    padding: 10px;
+    font-size: 15px;
+  }
+  .nav-icons li form input[type="submit"] {
+    padding: 10px 0;
+  }
+  .nav-icons li form input[type="checkbox"] {
+    position: relative;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  .nav-icons li form input[type="checkbox"]::after {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 700;
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 3;
+    transition: 0.4s;
+  }
+  .nav-icons li form input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 6px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .nav-icons li form label {
+    display: block;
+    text-transform: capitalize;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(8, 3, 37, 0.4);
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    z-index: 50;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .fixed-nav {
+    position: fixed;
+    animation: 0.5s linear slide;
+    background-color: #0a0526;
+    z-index: 10;
+  }
+  .navbar {
+    position: relative;
+  }
+  .navbar #bars {
+    font-size: 25px;
+  }
+  #check,
+  label {
+    display: none;
+  }
+  nav .left-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+  }
+  .left-box .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .left-box .links .logo {
+    font-size: 50px;
+    color: #fff;
+  }
+  .left-box a:nth-child(2) {
+    font-size: 35px;
+    color: #fff;
+  }
+  .left-box i {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    font-size: 10px;
+    transition: 0.4s;
+  }
+  .left-box ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  .left-box ul li:first-child::after {
+    content: "games";
+  }
+  .left-box .sub-menu {
+    position: absolute;
+    flex-wrap: wrap;
+    left: 0;
+  }
+  .left-box .sub-menu::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    width: 0;
+  }
+  .left-box .sub-menu li {
+    flex: 50%;
+  }
+  .left-box .sub-menu li a {
+    text-transform: capitalize;
+    position: relative;
+  }
+  .left-box .sub-menu li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #777;
+    transition: 0.4s ease-in-out;
+  }
+  .left-box ul li:nth-child(2):after {
+    content: "news";
+  }
+  .left-box ul li:last-child::after {
+    content: "full list";
+  }
+  .left-box .sub-menu li::after {
+    content: "" !important;
+  }
+  nav .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  nav .nav-icons > li:first-child:after {
+    content: "user";
+  }
+  @media (max-width: 767px) {
+    #check:not(:checked) ~ nav,
+    nav {
+      width: 0;
+    }
+    nav {
+      flex-direction: column;
+      justify-content: flex-start;
+      background-color: #080325 !important;
+      z-index: 10;
+      position: fixed;
+      height: 100%;
+      right: -30px;
+      top: 0;
+      align-items: flex-start;
+      transition: 0.4s ease-in-out;
+    }
+    .navbar {
+      padding: 10px;
+    }
+    #check:checked ~ nav {
+      width: 75%;
+    }
+    label {
+      display: block;
+    }
+    nav .left-box,
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start !important;
+    }
+    nav .left-box ul {
+      gap: 20px;
+    }
+    nav .nav-icons {
+      flex-direction: column;
+      align-items: flex-start !important;
+      margin-top: 20px;
+    }
+  }
+</style>
+
+<script>
+ window.onscroll = function () {
+    const nav = document.querySelector("#nav");
+    if (window.scrollY > 300) {
+      nav.classList.add("fixed-nav");
+    } else {
+      nav.classList.remove("fixed-nav");
+    }
+  };
+  const store = document.querySelector("#store");
+  store.onclick = function () {
+    toggleMenu("#store-list");
+    toggleArrow("#store");
+  };
+  const blog = document.querySelector("#blog");
+  blog.onclick = function () {
+    toggleMenu("#blog-list");
+    toggleArrow("#blog");
+  };
+  const features = document.querySelector("#features");
+  features.onclick = function () {
+    toggleMenu("#features-list");
+    toggleArrow("#features");
+  };
+
+  const user = document.querySelector("#user");
+  user.onclick = function () {
+    toggleMenu("#user-list");
+  };
+
+  function toggleMenu(el) {
+    const element = document.querySelector(el);
+    if (element.style.opacity === "0") {
+      element.style.opacity = "1";
+      element.style.zIndex = "50";
+    } else {
+      element.style.opacity = "0";
+      element.style.zIndex = "unset";
+    }
+  }
+  function toggleArrow(el) {
+    const arrow = document.querySelector(`${el} i`);
+    if (arrow.style.transform === "translateY(-50%) rotate(0deg)") {
+      arrow.style.transform = "translateY(-50%) rotate(180deg)";
+      console.log(arrow.style.transform);
+    } else {
+      arrow.style.transform = "translateY(-50%) rotate(0deg)";
+    }
+  }
+</script>
