@@ -119,15 +119,21 @@
 </nav>
 
 <style>
+  .left-box .sub-menu li a::after,
+  nav .nav-icons ul li a::after {
+    bottom: -5px;
+    transform: translateX(-50%);
+    transition: 0.4s ease-in-out;
+  }
   @media (max-width: 767px) {
     .nav-icons li:first-child ul {
-    right: 0px !important;
+      right: 0 !important;
     }
     .nav-icons li:nth-child(4) form {
       right: -50px;
     }
     .nav-icons li:last-child ul {
-      right: 0px;
+      right: 0;
     }
   }
   .nav-icons li:last-child ul {
@@ -182,13 +188,10 @@
   nav .nav-icons ul li a::after {
     content: "";
     position: absolute;
-    bottom: -5px;
     left: 50%;
-    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: #777;
-    transition: 0.4s ease-in-out;
   }
   .nav-icons li form::after,
   nav .nav-icons ul::after {
@@ -383,13 +386,10 @@
     content: "";
     display: block;
     position: absolute;
-    bottom: -5px;
     left: 50%;
-    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: #777;
-    transition: 0.4s ease-in-out;
   }
   .left-box ul li:nth-child(2):after {
     content: "الاخبار";

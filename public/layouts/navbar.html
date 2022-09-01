@@ -10,12 +10,16 @@
     </div>
     <ul style="gap: 30px">
       <li id="store">
-        <a href="#">Store</a>
+        Store
         <i
           class="fa-solid fa-caret-down"
           style="transform: translateY(-50%) rotate(0deg)"
         ></i>
-        <ul class="sub-menu" id="store-list" style="opacity:0; visibility: hidden;">
+        <ul
+          class="sub-menu"
+          id="store-list"
+          style="opacity: 0; visibility: hidden"
+        >
           <li><a href="#">Store Style 1</a></li>
           <li><a href="#">Product Style 1</a></li>
           <li><a href="#">Store Style 2</a></li>
@@ -25,12 +29,16 @@
         </ul>
       </li>
       <li id="blog">
-        <a href="#">Blog</a>
+        Blog
         <i
           class="fa-solid fa-caret-down"
           style="transform: translateY(-50%) rotate(0deg)"
         ></i>
-        <ul class="sub-menu" id="blog-list" style="opacity: 0; visibility: hidden;">
+        <ul
+          class="sub-menu"
+          id="blog-list"
+          style="opacity: 0; visibility: hidden"
+        >
           <li><a href="#">Blog Style 1</a></li>
           <li><a href="#">Post Style 1</a></li>
           <li><a href="#">Blog Style 2</a></li>
@@ -40,12 +48,16 @@
         </ul>
       </li>
       <li id="features">
-        <a href="#">Features</a>
+        Features
         <i
           class="fa-solid fa-caret-down"
           style="transform: translateY(-50%) rotate(0deg)"
         ></i>
-        <ul class="sub-menu" id="features-list" style="opacity: 0; visibility: hidden;">
+        <ul
+          class="sub-menu"
+          id="features-list"
+          style="opacity: 0; visibility: hidden"
+        >
           <li><a href="#">Forums</a></li>
           <li><a href="#">Widgets</a></li>
           <li><a href="#">Forums Topics</a></li>
@@ -65,7 +77,7 @@
   <ul class="nav-icons">
     <li id="user">
       <a href="#">Ahmed</a>
-      <ul  id="user-list" style="opacity:0; visibility: hidden;">
+      <ul id="user-list" style="opacity: 0; visibility: hidden">
         <li><a href="#">Activity</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Messages</a></li>
@@ -83,7 +95,7 @@
     </li>
     <li id="user-icon">
       <i class="fa-solid fa-user fa-1x"></i>
-      <form style="opacity:0; visibility: hidden;" id="login-form">
+      <form style="opacity: 0; visibility: hidden" id="login-form">
         <label for="username">Username:</label>
         <input type="text" id="username" required autocomplete="off" />
         <label for="password">Password:</label>
@@ -100,7 +112,7 @@
     </li>
     <li id="lang">
       <i class="fa-solid fa-globe"></i>
-      <ul id="lang-list" style="opacity:0; visibility: hidden;">
+      <ul id="lang-list" style="opacity: 0; visibility: hidden">
         <li><a href="ar/arabic.html">عربى</a></li>
         <li><a href="index.html">English</a></li>
       </ul>
@@ -109,22 +121,18 @@
 </nav>
 
 <style>
-  @media (max-width:767px) {
-    .nav-icons li:first-child ul {
-      left:0;
-  }
-  .nav-icons li:nth-child(4) form {
-    left:-50px;
-  }
-  .nav-icons li:last-child ul {
-    left:0px;
-  }
+  .left-box .sub-menu li a::after,
+  nav .nav-icons ul li a::after {
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.4s ease-in-out;
   }
   .nav-icons li:last-child ul {
     width: 200px;
-    padding:10px;
-    top:70px;
-    right:0;
+    padding: 10px;
+    top: 70px;
+    right: 0;
   }
   .left-box .sub-menu li a:hover::after,
   .navbar,
@@ -172,13 +180,9 @@
   nav .nav-icons ul li a::after {
     content: "";
     position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: #777;
-    transition: 0.4s ease-in-out;
   }
   .nav-icons li form::after,
   nav .nav-icons ul::after {
@@ -343,12 +347,15 @@
     font-size: 10px;
     transition: 0.4s;
   }
+  .left-box ul li,
   .left-box ul li a {
     color: #fff;
     text-transform: uppercase;
     font-size: 15px;
+    cursor: pointer;
   }
   .left-box ul li:first-child::after {
+    text-transform: lowercase;
     content: "games";
   }
   .left-box .sub-menu {
@@ -373,18 +380,16 @@
     content: "";
     display: block;
     position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: #777;
-    transition: 0.4s ease-in-out;
   }
   .left-box ul li:nth-child(2):after {
+    text-transform: lowercase;
     content: "news";
   }
   .left-box ul li:last-child::after {
+    text-transform: lowercase;
     content: "full list";
   }
   .left-box .sub-menu li::after {
@@ -399,6 +404,13 @@
     content: "user";
   }
   @media (max-width: 767px) {
+    .nav-icons li:first-child ul,
+    .nav-icons li:last-child ul {
+      left: 0;
+    }
+    .nav-icons li:nth-child(4) form {
+      left: -50px;
+    }
     #check:not(:checked) ~ nav,
     nav {
       width: 0;
@@ -441,7 +453,7 @@
 </style>
 
 <script>
- window.onscroll = function () {
+  window.onscroll = function () {
     const nav = document.querySelector("#nav");
     if (window.scrollY > 300) {
       nav.classList.add("fixed-nav");
@@ -471,14 +483,14 @@
   };
 
   const lang = document.querySelector("#lang");
-  lang.onclick = function() {
+  lang.onclick = function () {
     toggleMenu("#lang-list");
-  }
+  };
 
   const user_icon = document.querySelector("#user-icon");
   user_icon.onclick = function () {
     toggleMenu("#login-form");
-  }
+  };
   function toggleMenu(el) {
     const element = document.querySelector(el);
     if (element.style.opacity === "0") {

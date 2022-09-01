@@ -1,3 +1,14 @@
+header::after,
+header::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.demo,
+.price a,
+main .buttons a {
+  text-align: center;
+  color: #fff;
+}
 .demo .box p,
 main p {
   line-height: 1.8;
@@ -6,7 +17,6 @@ main p {
 header::after {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
 }
 .demo,
 .preloader,
@@ -117,23 +127,17 @@ main {
 header::after {
   background-image: url("../assets/header3.webp");
   height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 1;
 }
 header::before {
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 2;
   background-color: rgb(0 0 0 / 70%);
   height: 100%;
 }
 .price a,
 main .buttons a {
-  color: #fff;
   padding: 15px 20px;
   width: 150px;
-  text-align: center;
   transform: skew(-12deg);
 }
 main {
@@ -186,10 +190,6 @@ main .buttons a:last-child:hover {
   background-color: #d92b4c;
   border: 2px solid #d92b4c;
 }
-.demo {
-  text-align: center;
-  color: #fff;
-}
 .demo .container:first-child {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -218,6 +218,10 @@ main .buttons a:last-child:hover {
   font-size: 50px;
   text-transform: capitalize;
   margin: 10px 0 30px;
+}
+.features .feature-head,
+.price h2 {
+  text-transform: uppercase;
 }
 .demo .games {
   display: flex;
@@ -283,7 +287,6 @@ main .buttons a:last-child:hover {
   text-align: right;
   padding: 30px 50px;
   font-size: 50px;
-  text-transform: uppercase;
 }
 @media (max-width: 662px) {
   .features .feature-head {
@@ -342,6 +345,13 @@ main .buttons a:last-child:hover {
   background-color: rgb(0 0 0 / 50%);
   z-index: 1;
 }
+.price a,
+.price h2,
+.social .connect,
+.social .wrapper .box {
+  position: relative;
+  z-index: 2;
+}
 .features .feature-box h3 {
   font-weight: 600;
   font-size: 25px;
@@ -367,7 +377,7 @@ main .buttons a:last-child:hover {
   position: relative;
 }
 .questions .wrapper {
-  text-align:right;
+  text-align: right;
   padding: 0 30px;
   max-width: 1100px;
   margin: 0 auto;
@@ -391,18 +401,11 @@ main .buttons a:last-child:hover {
   max-width: 1100px;
   margin: 100px auto 0;
 }
-.price h2 {
-  text-transform: uppercase;
-  position: relative;
-  z-index: 2;
-}
 .price a {
   border: 2px solid #fff;
   display: block;
   margin: 100px auto 0;
   font-size: 14px;
-  position: relative;
-  z-index: 2;
   transition: 0.4s ease-in-out;
 }
 .social {
@@ -412,8 +415,6 @@ main .buttons a:last-child:hover {
   margin-bottom: 30px;
   font-size: 40px;
   letter-spacing: 1px;
-  position: relative;
-  z-index: 2;
 }
 .social .wrapper {
   display: flex;
@@ -438,8 +439,6 @@ main .buttons a:last-child:hover {
 }
 .social .wrapper .box {
   background: 0 0;
-  position: relative;
-  z-index: 2;
 }
 .social .wrapper .box span {
   display: block;
