@@ -119,6 +119,17 @@
 </nav>
 
 <style>
+  @media (max-width: 767px) {
+    .nav-icons li:first-child ul {
+    right: 0px !important;
+    }
+    .nav-icons li:nth-child(4) form {
+      right: -50px;
+    }
+    .nav-icons li:last-child ul {
+      right: 0px;
+    }
+  }
   .nav-icons li:last-child ul {
     width: 200px;
     padding: 10px;
@@ -384,7 +395,7 @@
     content: "الاخبار";
   }
   .left-box ul li:last-child::after {
-    content: "القائمة"
+    content: "القائمة";
   }
   .left-box .sub-menu li::after {
     content: "" !important;

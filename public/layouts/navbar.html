@@ -65,7 +65,7 @@
   <ul class="nav-icons">
     <li id="user">
       <a href="#">Ahmed</a>
-      <ul style="opacity: 0; visibility: hidden;" id="user-list">
+      <ul  id="user-list" style="opacity:0; visibility: hidden;">
         <li><a href="#">Activity</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Messages</a></li>
@@ -109,6 +109,17 @@
 </nav>
 
 <style>
+  @media (max-width:767px) {
+    .nav-icons li:first-child ul {
+      left:0;
+  }
+  .nav-icons li:nth-child(4) form {
+    left:-50px;
+  }
+  .nav-icons li:last-child ul {
+    left:0px;
+  }
+  }
   .nav-icons li:last-child ul {
     width: 200px;
     padding:10px;
