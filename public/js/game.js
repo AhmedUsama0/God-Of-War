@@ -2,7 +2,7 @@ window.onload = function () {
   let loader = document.querySelector("#loader");
   (loader.style.opacity = "0"), (loader.style.zIndex = "-1");
   let navbar = document.querySelector("#navbar");
-  fetch("./layouts/navbar.html")
+  fetch("layouts/navbar.html")
     .then((res) => res.text())
     .then((data) => {
       navbar.innerHTML = data;
