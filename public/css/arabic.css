@@ -2,6 +2,10 @@ header::after,
 header::before {
   left: 50%;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 .demo,
 .price a,
@@ -45,6 +49,10 @@ body {
   height: 100%;
   z-index: 100;
   transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
   opacity: 1;
 }
 .features,
@@ -56,6 +64,10 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   color: #fff;
   font-size: 55px;
   font-weight: 700;
@@ -65,6 +77,10 @@ header {
   content: "";
   position: absolute;
   transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+  -webkit-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+  -moz-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+  -ms-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+  -o-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
   left: 50%;
   top: 50%;
 }
@@ -84,8 +100,17 @@ header {
   z-index: 2;
   animation-name: rotate;
   animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
   animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-timing-function: ease-in-out;
+  -o-animation-timing-function: ease-in-out;
 }
 .features::after,
 .features::before,
@@ -98,9 +123,20 @@ header::before {
 @keyframes rotate {
   0% {
     transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+    -webkit-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+    -moz-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+    -ms-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
+    -o-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg);
   }
   100% {
     transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg) rotate(360deg);
+    -webkit-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg)
+      rotate(360deg);
+    -moz-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg)
+      rotate(360deg);
+    -ms-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg)
+      rotate(360deg);
+    -o-transform: translate(-50%, -50%) rotate3d(2, 2, 3, 250deg) rotate(360deg);
   }
 }
 .holder {
@@ -139,12 +175,19 @@ main .buttons a {
   padding: 15px 20px;
   width: 150px;
   transform: skew(-12deg);
+  -webkit-transform: skew(-12deg);
+  -moz-transform: skew(-12deg);
+  -ms-transform: skew(-12deg);
+  -o-transform: skew(-12deg);
 }
 main {
   top: 50%;
   left: 60%;
   transform: translate(-50%, -40%);
-  z-index: 6;
+  -webkit-transform: translate(-50%, -40%);
+  -moz-transform: translate(-50%, -40%);
+  -ms-transform: translate(-50%, -40%);
+  -o-transform: translate(-50%, -40%);
 }
 .social .wrapper .box i,
 main h1 {
@@ -210,6 +253,10 @@ main .buttons a:last-child:hover {
 }
 .demo .box:first-child i {
   transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
 }
 .demo .box h2 {
   margin: 20px 0;
@@ -320,6 +367,10 @@ main .buttons a:last-child:hover {
     text-align: center;
     left: 50%;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
   }
   main .buttons {
     gap: 0;
@@ -407,6 +458,10 @@ main .buttons a:last-child:hover {
   margin: 100px auto 0;
   font-size: 14px;
   transition: 0.4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -ms-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
 }
 .social {
   background-image: url("../assets/contact.webp");
@@ -436,6 +491,10 @@ main .buttons a:last-child:hover {
 }
 .social .wrapper .box:first-child i {
   transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
 }
 .social .wrapper .box {
   background: 0 0;

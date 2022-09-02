@@ -6,7 +6,6 @@ window.onload = function () {
       .then((res) => res.text())
       .then((data) => {
         navbar.innerHTML = data;
-        console.log(data);
         let parser = new DOMParser(),
           doc = parser.parseFromString(data, "text/html");
         eval(doc.querySelector("script").textContent);
