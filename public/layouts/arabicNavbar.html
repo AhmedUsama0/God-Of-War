@@ -10,7 +10,7 @@
     </div>
     <ul style="gap: 30px">
       <li id="store">
-        <a href="#">المتجر</a>
+        المتجر
         <i
           class="fa-solid fa-caret-down"
           style="transform: translateY(-50%) rotate(0deg)"
@@ -29,7 +29,7 @@
         </ul>
       </li>
       <li id="blog">
-        <a href="#">المقالات</a>
+        المقالات
         <i
           class="fa-solid fa-caret-down"
           style="transform: translateY(-50%) rotate(0deg)"
@@ -48,7 +48,7 @@
         </ul>
       </li>
       <li id="features">
-        <a href="#">المميزات</a>
+        المميزات
         <i
           class="fa-solid fa-caret-down"
           style="transform: translateY(-50%) rotate(0deg)"
@@ -76,7 +76,7 @@
   </div>
   <ul class="nav-icons">
     <li id="user">
-      <a href="#">احمد</a>
+      احمد
       <ul style="opacity: 0; visibility: hidden" id="user-list">
         <li><a href="#">نشاط</a></li>
         <li><a href="#">الملف الشخصى</a></li>
@@ -161,6 +161,8 @@
   nav .nav-icons li {
     padding: 10px;
     position: relative;
+    color: #fff;
+    cursor: pointer;
   }
   .left-box .sub-menu,
   .nav-icons li form,
@@ -463,31 +465,37 @@
   store.onclick = function () {
     toggleMenu("#store-list");
     toggleArrow("#store");
+    stopPropagation("#store-list");
   };
   const blog = document.querySelector("#blog");
   blog.onclick = function () {
     toggleMenu("#blog-list");
     toggleArrow("#blog");
+    stopPropagation("#blog-list");
   };
   const features = document.querySelector("#features");
   features.onclick = function () {
     toggleMenu("#features-list");
     toggleArrow("#features");
+    stopPropagation("#features-list");
   };
 
   const user = document.querySelector("#user");
   user.onclick = function () {
     toggleMenu("#user-list");
+    stopPropagation("#user-list");
   };
 
   const lang = document.querySelector("#lang");
   lang.onclick = function () {
     toggleMenu("#lang-list");
+    stopPropagation("#lang-list");
   };
 
   const user_icon = document.querySelector("#user-icon");
-  user_icon.onclick = function () {
+  user_icon.onclick = function (e) {
     toggleMenu("#login-form");
+    stopPropagation("#login-form");
   };
   function toggleMenu(el) {
     const element = document.querySelector(el);
@@ -507,6 +515,12 @@
       arrow.style.transform = "translateY(-50%) rotate(180deg)";
     } else {
       arrow.style.transform = "translateY(-50%) rotate(0deg)";
+    }
+  }
+  // disable click event on parent when click on the child
+  function stopPropagation(child) {
+    document.querySelector(child).onclick = function (e) {
+      e.stopPropagation();
     }
   }
 </script>

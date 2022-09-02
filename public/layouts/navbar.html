@@ -76,7 +76,7 @@
   </div>
   <ul class="nav-icons">
     <li id="user">
-      <a href="#">Ahmed</a>
+      Ahmed
       <ul id="user-list" style="opacity: 0; visibility: hidden">
         <li><a href="#">Activity</a></li>
         <li><a href="#">Profile</a></li>
@@ -166,6 +166,7 @@
   }
   nav .nav-icons li {
     cursor: pointer;
+    color: #fff;
   }
   nav .nav-icons ul {
     position: absolute;
@@ -465,31 +466,37 @@
   store.onclick = function () {
     toggleMenu("#store-list");
     toggleArrow("#store");
+    stopPropagation("#store-list");
   };
   const blog = document.querySelector("#blog");
   blog.onclick = function () {
     toggleMenu("#blog-list");
     toggleArrow("#blog");
+    stopPropagation("#blog-list");
   };
   const features = document.querySelector("#features");
   features.onclick = function () {
     toggleMenu("#features-list");
     toggleArrow("#features");
+    stopPropagation("#features-list");
   };
 
   const user = document.querySelector("#user");
   user.onclick = function () {
     toggleMenu("#user-list");
+    stopPropagation("#user-list");
   };
 
   const lang = document.querySelector("#lang");
   lang.onclick = function () {
     toggleMenu("#lang-list");
+    stopPropagation("#lang-list");
   };
 
   const user_icon = document.querySelector("#user-icon");
-  user_icon.onclick = function () {
+  user_icon.onclick = function (e) {
     toggleMenu("#login-form");
+    stopPropagation("#login-form");
   };
   function toggleMenu(el) {
     const element = document.querySelector(el);
@@ -509,6 +516,12 @@
       arrow.style.transform = "translateY(-50%) rotate(180deg)";
     } else {
       arrow.style.transform = "translateY(-50%) rotate(0deg)";
+    }
+  }
+  // disable click event on parent when click on the child
+  function stopPropagation(child) {
+    document.querySelector(child).onclick = function (e) {
+      e.stopPropagation();
     }
   }
 </script>
