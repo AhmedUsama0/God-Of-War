@@ -17,7 +17,7 @@
         ></i>
         <ul
           class="sub-menu"
-          id="store-list"
+          id="store_list"
           style="opacity: 0; visibility: hidden"
         >
           <li><a href="#">استايل المتجر 1</a></li>
@@ -36,7 +36,7 @@
         ></i>
         <ul
           class="sub-menu"
-          id="blog-list"
+          id="blog_list"
           style="opacity: 0; visibility: hidden"
         >
           <li><a href="#">استايل المقالات 1</a></li>
@@ -55,7 +55,7 @@
         ></i>
         <ul
           class="sub-menu"
-          id="features-list"
+          id="features_list"
           style="opacity: 0; visibility: hidden"
         >
           <li><a href="#">المنتديات</a></li>
@@ -77,7 +77,7 @@
   <ul class="nav-icons">
     <li id="user">
       احمد
-      <ul style="opacity: 0; visibility: hidden" id="user-list">
+      <ul style="opacity: 0; visibility: hidden" id="user_list">
         <li><a href="#">نشاط</a></li>
         <li><a href="#">الملف الشخصى</a></li>
         <li><a href="#">الرسائل</a></li>
@@ -93,9 +93,9 @@
     <li>
       <i class="fa-solid fa-cart-shopping fa-1x"></i>
     </li>
-    <li id="user-icon">
+    <li id="user_icon">
       <i class="fa-solid fa-user fa-1x"></i>
-      <form style="opacity: 0; visibility: hidden" id="login-form">
+      <form style="opacity: 0; visibility: hidden" id="login_form">
         <label for="username">اسم المستخدم:</label>
         <input type="text" id="username" required autocomplete="off" />
         <label for="password">كلمة السر:</label>
@@ -110,7 +110,7 @@
     </li>
     <li id="lang">
       <i class="fa-solid fa-globe"></i>
-      <ul id="lang-list" style="opacity: 0; visibility: hidden">
+      <ul id="lang_list" style="opacity: 0; visibility: hidden">
         <li><a href="../ar/arabic.html">عربى</a></li>
         <li><a href="../index.html">English</a></li>
       </ul>
@@ -496,74 +496,63 @@
 </style>
 
 <script>
-  window.onscroll = function () {
-    const nav = document.querySelector("#nav");
+  window.onscroll = () => {
     if (window.scrollY > 300) {
       nav.classList.add("fixed-nav");
     } else {
       nav.classList.remove("fixed-nav");
     }
   };
-  const store = document.querySelector("#store");
-  store.onclick = function () {
-    toggleMenu("#store-list");
-    toggleArrow("#store");
-    stopPropagation("#store-list");
+  store.onclick = () => {
+    toggleMenu(store_list);
+    toggleArrow(store);
+    stopPropagation(store_list);
   };
-  const blog = document.querySelector("#blog");
-  blog.onclick = function () {
-    toggleMenu("#blog-list");
-    toggleArrow("#blog");
-    stopPropagation("#blog-list");
+  blog.onclick = () => {
+    toggleMenu(blog_list);
+    toggleArrow(blog);
+    stopPropagation(blog_list);
   };
-  const features = document.querySelector("#features");
-  features.onclick = function () {
-    toggleMenu("#features-list");
-    toggleArrow("#features");
-    stopPropagation("#features-list");
+  features.onclick = () => {
+    toggleMenu(features_list);
+    toggleArrow(features);
+    stopPropagation(features_list);
   };
-
-  const user = document.querySelector("#user");
-  user.onclick = function () {
-    toggleMenu("#user-list");
-    stopPropagation("#user-list");
+  user.onclick = () => {
+    toggleMenu(user_list);
+    stopPropagation(user_list);
   };
 
-  const lang = document.querySelector("#lang");
-  lang.onclick = function () {
-    toggleMenu("#lang-list");
-    stopPropagation("#lang-list");
+  lang.onclick = () => {
+    toggleMenu(lang_list);
+    stopPropagation(lang_list);
   };
-
-  const user_icon = document.querySelector("#user-icon");
-  user_icon.onclick = function (e) {
-    toggleMenu("#login-form");
-    stopPropagation("#login-form");
+  user_icon.onclick = () => {
+    toggleMenu(login_form);
+    stopPropagation(login_form);
   };
-  function toggleMenu(el) {
-    const element = document.querySelector(el);
-    if (element.style.opacity === "0") {
-      element.style.opacity = "1";
-      element.style.zIndex = "50";
-      element.style.visibility = "visible";
+  const toggleMenu = (el) => {
+    if (el.style.opacity === "0") {
+      el.style.opacity = "1";
+      el.style.zIndex = "50";
+      el.style.visibility = "visible";
     } else {
-      element.style.opacity = "0";
-      element.style.zIndex = "unset";
-      element.style.visibility = "hidden";
+      el.style.opacity = "0";
+      el.style.zIndex = "unset";
+      el.style.visibility = "hidden";
     }
-  }
-  function toggleArrow(el) {
-    const arrow = document.querySelector(`${el} i`);
-    if (arrow.style.transform === "translateY(-50%) rotate(0deg)") {
-      arrow.style.transform = "translateY(-50%) rotate(180deg)";
+  };
+  const toggleArrow = (el) => {
+    if (el.childNodes[1].style.transform === "translateY(-50%) rotate(0deg)") {
+      el.childNodes[1].style.transform = "translateY(-50%) rotate(180deg)";
     } else {
-      arrow.style.transform = "translateY(-50%) rotate(0deg)";
+      el.childNodes[1].style.transform = "translateY(-50%) rotate(0deg)";
     }
-  }
+  };
   // disable click event on parent when click on the child
-  function stopPropagation(child) {
-    document.querySelector(child).onclick = function (e) {
+  const stopPropagation = (child) => {
+    child.onclick = (e) => {
       e.stopPropagation();
     };
-  }
+  };
 </script>
