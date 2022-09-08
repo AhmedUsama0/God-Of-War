@@ -95,7 +95,7 @@
     </li>
     <li id="user_icon">
       <i class="fa-solid fa-user fa-1x"></i>
-      <form  id="login_form" style="opacity:0; visibility: hidden;">
+      <form id="login_form" style="opacity: 0; visibility: hidden">
         <label for="username">Username:</label>
         <input type="text" id="username" required autocomplete="off" />
         <label for="password">Password:</label>
@@ -501,11 +501,10 @@
   window.onscroll = () => {
     if (window.scrollY > 300) {
       nav.classList.add("fixed-nav");
-    } else {
-      nav.classList.remove("fixed-nav");
+      return;
     }
+    nav.classList.remove("fixed-nav");
   };
-
   store.onclick = () => {
     toggleMenu(store_list);
     toggleArrow(store);
@@ -535,21 +534,25 @@
     stopPropagation(login_form);
   };
   const toggleMenu = (el) => {
-    if (el.style.opacity === "0") {
-      el.style.opacity = "1";
-      el.style.zIndex = "50";
-      el.style.visibility = "visible";
-    } else {
-      el.style.opacity = "0";
-      el.style.zIndex = "unset";
-      el.style.visibility = "hidden";
+    switch (el.style.opacity) {
+      case "0":
+        el.style.opacity = "1";
+        el.style.zIndex = "50";
+        el.style.visibility = "visible";
+        break;
+      default:
+        el.style.opacity = "0";
+        el.style.zIndex = "unset";
+        el.style.visibility = "hidden";
     }
   };
   const toggleArrow = (el) => {
-    if (el.childNodes[1].style.transform === "translateY(-50%) rotate(0deg)") {
-      el.childNodes[1].style.transform = "translateY(-50%) rotate(180deg)";
-    } else {
-      el.childNodes[1].style.transform = "translateY(-50%) rotate(0deg)";
+    switch (el.childNodes[1].style.transform) {
+      case "translateY(-50%) rotate(0deg)":
+        el.childNodes[1].style.transform = "translateY(-50%) rotate(180deg)";
+        break;
+      default:
+        el.childNodes[1].style.transform = "translateY(-50%) rotate(0deg)";
     }
   };
   // disable click event on parent when click on the child
